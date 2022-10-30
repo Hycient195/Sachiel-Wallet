@@ -1,0 +1,12 @@
+@each $key, $value in $units{
+  .f-#{$key}{
+    font-size: $value;
+  }
+}
+
+
+@each $value in $font-units {
+  .b-#{$value}{
+    font-weight: $value;
+  }
+}

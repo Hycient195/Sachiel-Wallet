@@ -24,3 +24,95 @@ a {
     background: black;
   }
 }
+
+:root {
+  --base-padding: 1em;
+  --base-padding-top: 1em;
+  --base-padding-bottom: 1em;
+  --base-margin: 1em;
+  --base-margin-top: 1em;
+  --base-margin-bottom: 1em;
+  --base-border-radius: 5px;
+  --base-gap: 10px;
+}
+
+
+/*=================*/
+/* Utility Classes */
+/*=================*/
+.centralize{
+  text-align: center;
+}
+
+.no-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.fullwidth{
+  width: 100%;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.no-underline{
+  text-decoration: none;
+}
+
+.no-border {
+  border: none;
+}
+
+.btn{
+  border: none;
+  border-radius: var(--base-border-radius);
+  padding: calc(var(--base-padding) / 1.8) calc(var(--base-padding) * 2);
+  font-size: 1em;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+.btn.border-silver {
+  border: 1px solid silver;
+  transition: all 500ms;
+}
+
+.btn.border-silver:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.btn.bg-blue:hover {
+  background-color: var(--light-blue);
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn-large{
+  /* border: none; */
+  border-radius: calc(var(--base-border-radius) * 2);
+  padding: calc(var(--base-padding) / 1.5);
+  font-size: 20px;
+}
+
+.btn-large:hover{
+  cursor: pointer;
+}
+
+button {
+  border: none;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.font-inter {
+  font-family: Inter;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
+}

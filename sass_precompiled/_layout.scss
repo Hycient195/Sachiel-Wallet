@@ -1,0 +1,29 @@
+$display: grid, flex, block, inline, inline-block;
+
+@each $value in $display{
+  .#{$value}{
+    display: $value;
+  }
+}
+
+
+$justifications: space-between, space-around, space-evenly, center, end, flex-start, flex-end;
+
+@each $value in $justifications {
+  .justify-#{$value}{
+    justify-content: $value;
+  }
+
+  .align-#{$value}{
+    align-items: $value;
+  }
+}
+
+
+$directions: row, column;
+
+@each $value in $directions {
+  .flex-#{$value}{
+    flex-direction: $value;
+  }
+}

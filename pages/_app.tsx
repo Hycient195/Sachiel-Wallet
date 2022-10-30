@@ -1,6 +1,22 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/styles.css";
+import "../styles/globals.css";
+import "../styles/Navbar.css";
+import type { AppProps } from "next/app";
+import Layout from "../components/Layout/Layout";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  // return <Component {...pageProps} />
+
+  return (
+    <Layout>
+      <Head>
+        <meta charSet="UTF-8"/>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Sachiel Wallet</title>
+      </Head>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }

@@ -1,0 +1,41 @@
+$colors: (
+  "light-teal": #79EFBD,
+  "navy": #0D0B33,
+  "pink": #FF0A80,
+  "white": white,
+
+  "blue":  #0473E8,
+  "light-blue": #3f95f1,
+  "pale-blue":  #D9E6F5,
+  "crimson": #C8102E,
+  "red": rgba(225, 45, 58, 0.8),
+
+  "light-red": #FFE9D9,
+  "light-purple": #A5A9FE,
+  "yellow": #FFCF00,
+  "black": black,
+  "dark-grey": rgb(83, 83, 83),
+  "grey": grey,
+  "silver": silver,
+  "light-silver": #EDEDED,
+  "transparent": transparent,
+  // "green": #34CB33, 
+  "green": #33cb72,
+  "light-green": #e0f7e0,
+  "tan": #EDC424,
+  "khaki": #EDD370,
+);
+
+@each $key, $value in $colors {
+  .bg-#{$key}{
+    background-color: $value;
+  }
+
+  .#{$key}-text{
+    color: $value;
+  }
+
+  .border-#{$key} {
+    border: 1px solid $value;
+  }
+};

@@ -1,0 +1,251 @@
+@keyframes pulse {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 300%;
+  }
+}
+
+main.home_main {
+  section.hero {
+    background: linear-gradient(89.54deg, #0D0B33 44.8%, rgba(4, 32, 102, 0) 100.46%), linear-gradient(89.54deg, #0D0B33 45.56%, rgba(4, 32, 102, 0) 100.46%);
+    width: 100%;
+    height: 90vh;
+    padding: 2em 4.7vmax;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    & > div.hero_container {
+      width: calc(100% - (2 * 4.7vmax));
+      
+      position: absolute;
+      top: 27%;
+    }
+    div.hero_text_container {
+      max-width: 600px;
+    }
+
+    & h1 {
+      font-size: 3.3vmax;
+    }
+
+    & p {
+      font-size: 1.5vmax;
+    }
+
+    div.circle {
+      width: 150.15px;
+      height: 150.15px;
+      
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(243, 94, 155, 0.12) 0%, rgba(80, 208, 234, 0.12) 100%);
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.09);
+      // transform: rotate(-132.93deg);
+    }
+
+    div.circle_1_container {
+      position: absolute;
+      left: 40%;
+      top: 70%;
+    }
+
+    div.circle_2_container {
+      position: absolute;
+      right: 3%;
+      top: 90%;
+      z-index: 27 !important;
+    }
+
+    div.big_circle {
+      width: 386px;
+      height: 386px;
+      right: 5%;
+      // top: 203px;
+      position: absolute;
+      border-radius: 50%;
+      // z-index: 31 !important;
+      background: linear-gradient(225.97deg, #79EFBD 0.83%, rgba(121, 239, 189, 0) 92.57%);
+    }
+
+    
+    /* Right Side Blurs Section */
+    & > div.right_blurs {
+      right: 0;
+      top: 0;
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+      // background-color: wheat;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      & > div.purple {
+        background: radial-gradient(rgb(182, 11, 235) 5%, rgb(76, 32, 180));
+        background-size: 300%;
+        position: absolute;
+        top: -10%;
+        right: -20%;
+        height: 60%;
+        width: 60vw !important;
+        border-radius: 50%;
+        filter: blur(40px);
+        z-index: -1;
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      & > div.tomato {
+        background: radial-gradient(rgb(255, 180, 40) 15%, rgb(255, 71, 71));
+        background-size: 300%;
+        position: absolute;
+        bottom: 5%;
+        right: -20%;
+        height: 60%;
+        width: 70vw !important;
+        border-radius: 50%;
+        filter: blur(40px);
+        z-index: -2 !important;
+        animation: pulse 4s ease-in-out infinite;
+      }
+    }
+  }
+
+
+  /*==============*/
+  /* Perks Section*/
+  /*==============*/
+  & > section.perks {
+    padding: 5em 4.7vmax;
+   
+
+    & > div.perks_container {
+      max-width: 1200px;
+      
+      margin-inline: auto;
+      justify-content: space-between;
+      
+
+      &  div.perk_wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        background-image: url(../assets/home/perk-background.png);
+        background-repeat:repeat-x;
+        background-size: contain;
+        justify-content: space-between;
+        width: 100%;
+
+        & > div.perk_outline {
+          // background-color: red;
+          // border: 1px solid white;
+          // height: 200px;
+          // width: max-content;
+          // min-width: 350px;
+          display: grid;
+          justify-content: center !important;
+          
+          // max-width: 400px;
+          // position: relative;
+
+    //         background: 
+    // linear-gradient(red, blue) padding-box,
+    // linear-gradient(to right, red, darkorchid) border-box;
+  // border-radius: 10px;
+  // border: 4px solid transparent;
+  
+          & > div.perk {
+            min-width: 350px;
+            max-width: 450px;
+            // height: calc(100% - 2px);
+            // width: calc(100% - 2px);
+            // top: 0;
+              /* Border */
+  border: 4px solid transparent;
+  background: 
+    linear-gradient(to right, rgba(255,255, 255, 0.2), rgba(255, 255, 255, 0.1)), 
+    linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 10, 10, 0.1) ); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  
+
+            // border: 10px solid;
+            // border-image-slice: 1;
+            // border-width: 1px;
+            // border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+            // border-radius: 10px !important;
+
+
+
+            
+            // background: linear-gradient(108.62deg, rgba(225, 225, 225, 0.4) 3.15%, rgba(225, 225, 225, 0.1) 73.36%);
+            backdrop-filter: blur(10px);
+  
+            & > span.right {
+              color: linear-gradient(red, yellow);
+              background: -webkit-linear-gradient(45deg, #eee, #FF0A80);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+      }
+
+      
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  main.home_main {
+    section.hero {
+  
+  
+      & h1 {
+        font-size: 40px;
+      }
+  
+      & p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main.home_main {
+    section.hero {
+  
+      & > div.hero_container {
+        flex-direction: column;
+
+        & > div.right {
+          justify-self: center;
+          margin-inline: auto;
+          // background-color: red !important;
+          width: 100%;
+          height: 100px;
+
+          & > div.big_circle {
+            left: calc(50% - (386px / 2));
+          }
+          // display: none;
+        }
+      }
+      div.circle_1_container {
+        position: absolute;
+        left: 21%;
+        top: 52%;
+      }
+      & h1 {
+        font-size: 40px;
+      }
+  
+      & p {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+$margins: (
+  "m": "margin",
+  "m-r":" margin-right",
+  "m-l": "margin-left",
+  "m-t": "margin-top",
+  "m-b": "margin-bottom"
+);
+
+$paddings: (
+  "p": "padding",
+  "p-r": "padding-right",
+  "p-l": "padding-left",
+  "p-t": "padding-top",
+  "p-b": "padding-bottom"
+);
+
+$gaps: (
+  "g": "gap"
+);
+
+
+@each $key, $value in $units{
+  @each $innerKey, $innerValue in $margins {
+    .#{$innerKey}-#{$key}{
+      #{$innerValue}: $value;
+    }
+  };
+
+  @each $paddingKey, $paddingValue in $paddings {
+    .#{$paddingKey}-#{$key}{
+      #{$paddingValue}: $value;
+    }
+  };
+
+  .g-#{$key}{
+    gap: $value;
+  };
+
+  .br-#{$key}{
+    border-radius: $value;
+  }
+}
