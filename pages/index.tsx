@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 import s from "./index.module.scss";
 import EastIcon from '@mui/icons-material/East';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+// import { homeImages } from "../constants";
+import { homeImages } from '../constants';
 import Navbar from '../components/Navbar/Navbar';
 
 export default function Home() {
@@ -11,7 +13,7 @@ export default function Home() {
   return (
     <main className={`${s.home_main}`}>
       
-      <section className={`${s.hero} `}>
+      <section className={`${s.hero} flex justify-center align-end`}>
         <div className={`${s.hero_container} flex flex-row justify-space-between`}>
           <div className={`${s.hero_text_container}`}>
             <h1 className="white-text">The most trusted &amp; secure crypto wallet</h1>
@@ -19,13 +21,21 @@ export default function Home() {
               Buy, store, Manage and exchange 245+ cryptos and NFTs on your
               Mobile device.
             </p>
-            <button className="m-t-60 white-text bg-pink br-20 p-t-10 p-b-10 p-l-30 p-r-30 flex flex-row align-center g-20">Get Started <EastIcon /></button>
+            <button className="m-t-60 white-text bg-pink br-25 p-t-15 p-b-15 p-l-30 p-r-30 flex flex-row align-center g-20">Get Started <Image src={homeImages.right_arrow}/></button>
           </div>
 
           <div className={`${s.right} fulwidth`}>
+            <Image src={homeImages.phone} alt="phone"/>
             <div className={`${s.big_circle}`} />
           </div>
         </div>
+
+        <div className={`${s.patreons_container}`}>
+          <marquee behavior="alternate" direction="right">
+            <Image className="fullwith" src={homeImages.token_patreons} alt="token patreons"/>
+          </marquee>
+        </div>
+
 
         {/* Positioned Absolutely to Document Flow */}
         <div className={`${s.circle_1_container}`}>
@@ -42,7 +52,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============= */}
       {/* Perks Section */}
+      {/* ============= */}
       <section className={`${s.perks} bg-navy`}>
         <div className={`${s.perks_container} `}>
           <h1 className="white-text centralize">You Deserve Easy Access to Cryptocurrencies</h1>
@@ -72,6 +84,42 @@ export default function Home() {
           
           <div className={`${s.button_container} flex justify-center m-t-40`}>
             <button className="p-10 br-5 f-18 p-l-50 p-r-50 bg-light-teal">Download Now</button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================ */}
+      {/* Download Section */}
+      {/* ================ */}
+      <section className={`${s.download}`}>
+        <div className={`${s.download_container}`}>
+          <div className={`${s.download_text_container}`}>
+            <h1 className="white-text">Get the <br /> Sachiel Wallet app now.</h1>
+            <p className="white-text">
+              With the Mobile App, You can be able to Manage multiple
+              portfolios, stake and buy crypto, view your NFTs, and explore
+              Web3 on Android and iOS.
+            </p>
+            <div className={`${s.buttons_container} flex flex-row align-center g-40 m-t-40`}>
+              <button className="p-10 p-r-25 p-l-25 bg-black white-text flex flex-row g-10 align-center br-5">
+                <span className=""><Image src={homeImages.apple}/></span>
+                <span className="flex flex-column">
+                  <span className="">Download on the</span>
+                  <span className="f-20">App Store</span>
+                </span>
+              </button>
+              <button className="p-10 p-r-25 p-l-25 bg-black white-text flex flex-row g-10 align-center br-5">
+                <span className=""><Image src={homeImages.play_store}/></span>
+                <span className="flex flex-column">
+                  <span className="">Get it on</span>
+                  <span className="f-20">Google Play</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className={`${s.download_image_container}`}>
+            <Image src={homeImages.download_image}/>
           </div>
         </div>
       </section>

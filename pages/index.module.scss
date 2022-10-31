@@ -12,19 +12,49 @@ main.home_main {
     background: linear-gradient(89.54deg, #0D0B33 44.8%, rgba(4, 32, 102, 0) 100.46%), linear-gradient(89.54deg, #0D0B33 45.56%, rgba(4, 32, 102, 0) 100.46%);
     width: 100%;
     height: 90vh;
-    padding: 2em 4.7vmax;
+    padding: 2em 5vmax;
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
 
     & > div.hero_container {
-      width: calc(100% - (2 * 4.7vmax));
+      width: calc(100% - (2 * 5vmax));
       
       position: absolute;
-      top: 27%;
+      top: 18%;
+
+      & > div.right {
+        // background-color: red;i
+        z-index: -0;
+        // width: max-content;
+        position: relative;
+        transform: translateY(-8%);
+        right: 5%;
+        top: -40%;
+
+        & > div.big_circle {
+          width: 386px;
+          height: 386px;
+          // right: calc(70vw - (2 * 386px));
+          right: -13%;
+          top: calc(95vh - (2 * 386px));
+          position: absolute;
+          border-radius: 50%;
+          z-index: -1;
+          // z-index: 31 !important;
+          background: linear-gradient(225.97deg, #79EFBD 0.83%, rgba(121, 239, 189, 0) 92.57%);
+        }
+
+        & img {
+          // position: absolute;
+          top: 0;
+          right: 0%;
+        }
+        
+      }
     }
     div.hero_text_container {
-      max-width: 600px;
+      max-width: 700px;
     }
 
     & h1 {
@@ -58,16 +88,7 @@ main.home_main {
       z-index: 27 !important;
     }
 
-    div.big_circle {
-      width: 386px;
-      height: 386px;
-      right: 5%;
-      // top: 203px;
-      position: absolute;
-      border-radius: 50%;
-      // z-index: 31 !important;
-      background: linear-gradient(225.97deg, #79EFBD 0.83%, rgba(121, 239, 189, 0) 92.57%);
-    }
+    
 
     
     /* Right Side Blurs Section */
@@ -119,6 +140,13 @@ main.home_main {
   & > section.perks {
     padding: 5em 4.7vmax;
    
+    & h1 {
+      font-size: 2.5vmax;
+    }
+
+    & p {
+      font-size: 1.4vmax;
+    }
 
     & > div.perks_container {
       max-width: 1200px;
@@ -131,7 +159,7 @@ main.home_main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2em;
-        background-image: url(../assets/home/perk-background.png);
+        background-image: url(../public/assets/home/perk-background.png);
         background-repeat:repeat-x;
         background-size: contain;
         justify-content: space-between;
@@ -195,6 +223,42 @@ main.home_main {
       
     }
   }
+
+  & > section.download {
+    background-color: #181734;
+   
+
+    & > div.download_container {
+      // max-width: 1300px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+
+
+      & > div.download_text_container {
+        max-width: 700px;
+        padding: 5em 4.7vmax;
+  
+        & h1 {
+          font-size: 3vmax;
+        }
+    
+        & p {
+          font-size: 1.2vmax;
+        }
+      }
+
+      & > div.download_image_container {
+        // background-color: red;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    
+  }
 }
 
 
@@ -211,25 +275,66 @@ main.home_main {
         font-size: 20px;
       }
     }
+
+    section.perks {
+      & h1 {
+        font-size: 27px;
+      }
+  
+      & p {
+        font-size: 19px;
+      }
+    }
+
+    section.download {
+      & h1 {
+        font-size: 30px;
+      }
+      & p {
+        font-size: 17px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 900px) {
   main.home_main {
     section.hero {
+      height: 140vh;
+      padding: 20px !important;
+
   
       & > div.hero_container {
         flex-direction: column;
+        top: 10%;
+        width: calc(100% - 50px);
+        // max-width: 1000 !important;
+
 
         & > div.right {
+          justify-content: center;
           justify-self: center;
           margin-inline: auto;
+          left: 0;
+          display: flex !important;
           // background-color: red !important;
-          width: 100%;
-          height: 100px;
+          width: 90%;
+          transform: translateY(15%);
+          // height: 100px;
 
           & > div.big_circle {
-            left: calc(50% - (386px / 2));
+            width: 300px;
+            height: 300px;
+            left: calc(50% - (300px / 2));
+            top: 20%;
+          }
+
+          & img {
+            // position: absolute;
+            width: 250px;
+            height: 80%;
+            top: 0;
+            right: 0%;
           }
           // display: none;
         }
@@ -240,11 +345,11 @@ main.home_main {
         top: 52%;
       }
       & h1 {
-        font-size: 40px;
+        font-size: 35px;
       }
   
       & p {
-        font-size: 20px;
+        font-size: 17px;
       }
     }
   }

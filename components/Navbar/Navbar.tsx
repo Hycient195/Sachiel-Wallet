@@ -118,7 +118,7 @@ export default function Navbar() {
           }
           </div> */}
         </div>
-        {/* <div className="colorful_line" /> */}
+        <div className="colorful_line" />
 
         {/* { cartOpen && <Cart /> } */}
       </header>

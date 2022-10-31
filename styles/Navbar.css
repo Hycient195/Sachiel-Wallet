@@ -423,11 +423,18 @@ div.footer_items > ul > li > a{
 
   @keyframes animate-colorful-line{
     
-    0%{
+    from {
+      background-position: 300%;
+    }
+
+    to {
+      background-position: 0;
+    }
+    /* 0%{
       opacity: 0%;
     }
     15%{
-      background: linear-gradient( 90deg, var(--light-blue), black);
+      background: linear-gradient( 90deg, tomato, black);
       opacity: 100%;
     }
     30%{
@@ -435,7 +442,7 @@ div.footer_items > ul > li > a{
       opacity: 0;
     }
     50%{
-      background: linear-gradient(90deg, black, var(--light-blue), black);
+      background: linear-gradient(90deg, black, tomato, black);
       opacity: 100%;
     }
   
@@ -443,12 +450,12 @@ div.footer_items > ul > li > a{
       opacity: 0%;
     }
     80%{
-      background: linear-gradient( 90deg, black, var(--light-blue));
+      background: linear-gradient( 90deg, black, tomato);
       opacity: 100%;
     }
     94%{
       opacity: 0%;
-    }
+    } */
   }
 
   /* @keyframes animate-colorful-line{
@@ -497,8 +504,13 @@ div.footer_items > ul > li > a{
 
   div.colorful_line{
     height: 2px;
-    background-color: black !important;
+    /* background: linear-gradient( 90deg, tomato, black); */
+    background: linear-gradient(90deg,  var(--navy), var(--navy), tomato, var(--navy), var(--navy));
+
+    background-size: 300%;
+
+    /* background-color: black !important; */
     /* background: linear-gradient( 90deg, var(--light-blue), black); */
-    animation: animate-colorful-line 6s ease-in-out infinite;
+    animation: animate-colorful-line 10s ease-in-out infinite;
   }
 }
