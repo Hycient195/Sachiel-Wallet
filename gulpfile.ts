@@ -13,3 +13,4 @@ const watchStyles = () =>{
 }
 
 exports.default = series(buildStyles, watchStyles);
+export {}
