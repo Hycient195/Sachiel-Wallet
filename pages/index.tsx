@@ -21,7 +21,7 @@ export default function Home() {
               Buy, store, Manage and exchange 245+ cryptos and NFTs on your
               Mobile device.
             </p>
-            <button className="m-t-60 white-text bg-pink br-25 p-t-15 p-b-15 p-l-30 p-r-30 flex flex-row align-center g-20">Get Started <Image src={homeImages.right_arrow}/></button>
+            <button className="m-t-60 white-text bg-pink br-25 p-t-15 p-b-15 p-l-30 p-r-30 flex flex-row align-center g-20">Get Started <Image src={homeImages.right_arrow} alt="button icon"/></button>
           </div>
 
           <div className={`${s.right} fulwidth`}>
