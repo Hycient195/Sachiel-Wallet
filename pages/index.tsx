@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className={`${s.home_main}`}>
       
-      <section className={`${s.hero} flex justify-center align-end`}>
+      <section className={`${s.hero} flex justify-center align-flex-end`}>
         <div className={`${s.hero_container} flex flex-row justify-space-between`}>
           <div className={`${s.hero_text_container}`}>
             <h1 className="white-text">The most trusted &amp; secure crypto wallet</h1>
@@ -31,9 +31,10 @@ export default function Home() {
         </div>
 
         <div className={`${s.patreons_container}`}>
-          <marquee behavior="alternate" direction="right">
-            <Image className="fullwith" src={homeImages.token_patreons} alt="token patreons"/>
-          </marquee>
+          {/* @ts-ignore */}
+          {/* <marquee behavior="alternate" direction="right" className="fullwidth"> */}
+            <Image className={`${s.marquee}`} src={homeImages.token_patreons} alt="token patreons"/>
+          {/* </marquee> */}
         </div>
 
 
@@ -83,7 +84,7 @@ export default function Home() {
           </div>
           
           <div className={`${s.button_container} flex justify-center m-t-40`}>
-            <button className="p-10 br-5 f-18 p-l-50 p-r-50 bg-light-teal">Download Now</button>
+            <button className="p-12 navy-text br-5 f-20 p-l-50 p-r-50 bg-light-teal">Download Now</button>
           </div>
         </div>
       </section>
@@ -102,14 +103,14 @@ export default function Home() {
             </p>
             <div className={`${s.buttons_container} flex flex-row align-center g-40 m-t-40`}>
               <button className="p-10 p-r-25 p-l-25 bg-black white-text flex flex-row g-10 align-center br-5">
-                <span className=""><Image src={homeImages.apple}/></span>
+                <span className=""><Image src={homeImages.apple} alt="apple logo"/></span>
                 <span className="flex flex-column">
                   <span className="">Download on the</span>
                   <span className="f-20">App Store</span>
                 </span>
               </button>
               <button className="p-10 p-r-25 p-l-25 bg-black white-text flex flex-row g-10 align-center br-5">
-                <span className=""><Image src={homeImages.play_store}/></span>
+                <span className=""><Image src={homeImages.play_store} alt="playstore logo"/></span>
                 <span className="flex flex-column">
                   <span className="">Get it on</span>
                   <span className="f-20">Google Play</span>
@@ -119,7 +120,7 @@ export default function Home() {
           </div>
 
           <div className={`${s.download_image_container}`}>
-            <Image src={homeImages.download_image}/>
+            <Image src={homeImages.download_image} alt="download"/>
           </div>
         </div>
       </section>

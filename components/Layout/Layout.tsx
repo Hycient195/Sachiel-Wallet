@@ -2,6 +2,7 @@
 // import Footer from '../footer/footer';
 import Navbar from '../Navbar/Navbar';
 import { useRouter } from 'next/router';
+import Footer from '../Footer/Footer';
 
 
 interface TProps {
@@ -15,6 +16,7 @@ export default function Layout({children}: TProps){
     <div className="view-container">
       <Navbar />
       { children }
+      <Footer />
       {/* <Footer /> */}
       {/* {         
         !router.pathname.endsWith("/") ? 

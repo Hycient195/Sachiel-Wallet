@@ -6,28 +6,63 @@
     background-position: 300%;
   }
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(30%);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
 main.home_main {
   /*==============*/
   /* Perks Section*/
   /*==============*/
+  /*==================*/
+  /* Download Section */
+  /*==================*/
 }
 main.home_main section.hero {
   background: linear-gradient(89.54deg, #0D0B33 44.8%, rgba(4, 32, 102, 0) 100.46%), linear-gradient(89.54deg, #0D0B33 45.56%, rgba(4, 32, 102, 0) 100.46%);
   width: 100%;
   height: 90vh;
-  padding: 2em 4.7vmax;
+  padding: 2em 5vmax;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
   /* Right Side Blurs Section */
 }
 main.home_main section.hero > div.hero_container {
-  width: calc(100% - 9.4vmax);
+  width: calc(100% - 10vmax);
   position: absolute;
-  top: 27%;
+  top: 18%;
+}
+main.home_main section.hero > div.hero_container > div.right {
+  z-index: 0;
+  position: relative;
+  transform: translateY(-8%);
+  right: 5%;
+  top: -40%;
+}
+main.home_main section.hero > div.hero_container > div.right > div.big_circle {
+  width: 386px;
+  height: 386px;
+  right: -13%;
+  top: 12vh;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background: linear-gradient(225.97deg, #79EFBD 0.83%, rgba(121, 239, 189, 0) 92.57%);
+}
+main.home_main section.hero > div.hero_container > div.right img {
+  top: 0;
+  right: 0%;
 }
 main.home_main section.hero div.hero_text_container {
-  max-width: 600px;
+  max-width: 700px;
 }
 main.home_main section.hero h1 {
   font-size: 3.3vmax;
@@ -52,14 +87,6 @@ main.home_main section.hero div.circle_2_container {
   right: 3%;
   top: 90%;
   z-index: 27 !important;
-}
-main.home_main section.hero div.big_circle {
-  width: 386px;
-  height: 386px;
-  right: 5%;
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(225.97deg, #79EFBD 0.83%, rgba(121, 239, 189, 0) 92.57%);
 }
 main.home_main section.hero > div.right_blurs {
   right: 0;
@@ -98,7 +125,13 @@ main.home_main section.hero > div.right_blurs > div.tomato {
   animation: pulse 4s ease-in-out infinite;
 }
 main.home_main > section.perks {
-  padding: 5em 4.7vmax;
+  padding: 5em 4.1vmax;
+}
+main.home_main > section.perks h1 {
+  font-size: 2.5vmax;
+}
+main.home_main > section.perks p {
+  font-size: 1.4vmax;
 }
 main.home_main > section.perks > div.perks_container {
   max-width: 1200px;
@@ -109,7 +142,7 @@ main.home_main > section.perks > div.perks_container div.perk_wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2em;
-  background-image: url(../assets/home/perk-background.png);
+  background-image: url(../public/assets/home/perk-background.png);
   background-repeat: repeat-x;
   background-size: contain;
   justify-content: space-between;
@@ -120,7 +153,7 @@ main.home_main > section.perks > div.perks_container div.perk_wrapper > div.perk
   justify-content: center !important;
 }
 main.home_main > section.perks > div.perks_container div.perk_wrapper > div.perk_outline > div.perk {
-  min-width: 350px;
+  min-width: 320px;
   max-width: 450px;
   /* Border */
   border: 4px solid transparent;
@@ -135,27 +168,83 @@ main.home_main > section.perks > div.perks_container div.perk_wrapper > div.perk
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+main.home_main > section.download {
+  background-color: #181734;
+}
+main.home_main > section.download > div.download_container {
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+main.home_main > section.download > div.download_container > div.download_text_container {
+  max-width: 700px;
+  padding: 3em 4.7vmax;
+}
+main.home_main > section.download > div.download_container > div.download_text_container h1 {
+  font-size: 3vmax;
+}
+main.home_main > section.download > div.download_container > div.download_text_container p {
+  font-size: 1.2vmax;
+}
+main.home_main > section.download > div.download_container > div.download_image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 @media screen and (max-width: 1200px) {
   main.home_main section.hero h1 {
-    font-size: 40px;
+    font-size: 40px !important;
   }
   main.home_main section.hero p {
     font-size: 20px;
   }
+  main.home_main section.perks h1 {
+    font-size: 27px;
+  }
+  main.home_main section.perks p {
+    font-size: 19px;
+  }
+  main.home_main section.download h1 {
+    font-size: 30px;
+  }
+  main.home_main section.download p {
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 900px) {
+  .marquee {
+    animation: marquee 9s ease-in-out infinite;
+  }
+  main.home_main section.hero {
+    height: 140vh;
+    padding: 20px !important;
+  }
   main.home_main section.hero > div.hero_container {
     flex-direction: column;
+    top: 10%;
+    width: calc(100% - 50px);
   }
   main.home_main section.hero > div.hero_container > div.right {
+    justify-content: center;
     justify-self: center;
     margin-inline: auto;
-    width: 100%;
-    height: 100px;
+    left: 0;
+    display: flex !important;
+    width: 90%;
+    transform: translateY(15%);
   }
   main.home_main section.hero > div.hero_container > div.right > div.big_circle {
-    left: calc(50% - 193px);
+    width: 300px;
+    height: 300px;
+    left: calc(50% - 150px);
+    top: 20%;
+  }
+  main.home_main section.hero > div.hero_container > div.right img {
+    width: 250px;
+    height: 80%;
+    top: 0;
+    right: 0%;
   }
   main.home_main section.hero div.circle_1_container {
     position: absolute;
@@ -163,9 +252,36 @@ main.home_main > section.perks > div.perks_container div.perk_wrapper > div.perk
     top: 52%;
   }
   main.home_main section.hero h1 {
-    font-size: 40px;
+    font-size: 35px;
   }
   main.home_main section.hero p {
-    font-size: 20px;
+    font-size: 17px;
+  }
+  main.home_main > section.perks div.perk_wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  main.home_main > section.download > div.download_container {
+    grid-template-columns: 1fr;
+  }
+  main.home_main > section.download > div.download_container > div.download_text_container {
+    padding: 2.5em 1.5em;
+  }
+  main.home_main > section.download > div.download_container > div.download_text_container > h1 {
+    font-size: 30px;
+  }
+  main.home_main > section.download > div.download_container > div.download_text_container > p {
+    font-size: 16px;
+  }
+  main.home_main > section.download > div.download_container > div.download_text_container > div.buttons_container {
+    gap: calc(var(--base-gap) * 2);
+  }
+  main.home_main > section.download > div.download_container > div.download_text_container > div.buttons_container button {
+    padding: 1em 1.2em;
+  }
+  main.home_main > section.download > div.download_container > div.download_text_container > div.buttons_container button img {
+    width: 20px;
+  }
+  main.home_main > section.download div.download_image_container {
+    display: none;
   }
 }

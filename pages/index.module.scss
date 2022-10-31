@@ -7,6 +7,38 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(30%);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+
+@keyframes point-right {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: rotateX(360deg);
+  }
+  40% {
+    transform: rotateX(0deg);
+  }
+  // 50% {
+  //   transform: translateX(0);
+  // }
+}
+
+
+
 main.home_main {
   section.hero {
     background: linear-gradient(89.54deg, #0D0B33 44.8%, rgba(4, 32, 102, 0) 100.46%), linear-gradient(89.54deg, #0D0B33 45.56%, rgba(4, 32, 102, 0) 100.46%);
@@ -37,7 +69,8 @@ main.home_main {
           height: 386px;
           // right: calc(70vw - (2 * 386px));
           right: -13%;
-          top: calc(95vh - (2 * 386px));
+          // top: calc(50vh - (2 * 386px));
+          top: 12vh;
           position: absolute;
           border-radius: 50%;
           z-index: -1;
@@ -55,6 +88,11 @@ main.home_main {
     }
     div.hero_text_container {
       max-width: 700px;
+
+      & > button img {
+        animation: point-right 4s ease-in-out infinite;
+        // animation-delay: 3s;
+      }
     }
 
     & h1 {
@@ -138,7 +176,7 @@ main.home_main {
   /* Perks Section*/
   /*==============*/
   & > section.perks {
-    padding: 5em 4.7vmax;
+    padding: 5em 4.1vmax;
    
     & h1 {
       font-size: 2.5vmax;
@@ -184,7 +222,7 @@ main.home_main {
   // border: 4px solid transparent;
   
           & > div.perk {
-            min-width: 350px;
+            min-width: 320px;
             max-width: 450px;
             // height: calc(100% - 2px);
             // width: calc(100% - 2px);
@@ -224,6 +262,10 @@ main.home_main {
     }
   }
 
+
+  /*==================*/
+  /* Download Section */
+  /*==================*/
   & > section.download {
     background-color: #181734;
    
@@ -237,7 +279,7 @@ main.home_main {
 
       & > div.download_text_container {
         max-width: 700px;
-        padding: 5em 4.7vmax;
+        padding: 3em 4.7vmax;
   
         & h1 {
           font-size: 3vmax;
@@ -268,7 +310,7 @@ main.home_main {
   
   
       & h1 {
-        font-size: 40px;
+        font-size: 40px !important;
       }
   
       & p {
@@ -298,6 +340,10 @@ main.home_main {
 }
 
 @media screen and (max-width: 900px) {
+  .marquee {
+    animation: marquee 9s ease-in-out infinite;
+  }
+  
   main.home_main {
     section.hero {
       height: 140vh;
@@ -350,6 +396,47 @@ main.home_main {
   
       & p {
         font-size: 17px;
+      }
+    }
+
+    & > section.perks {
+      & div.perk_wrapper {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    & > section.download {
+      & > div.download_container {
+        grid-template-columns: 1fr;
+
+        & > div.download_text_container {
+          padding: 2.5em 1.5em;
+
+          & > h1 {
+            font-size: 30px;
+          }
+
+          & > p {
+            font-size: 16px;
+          }
+
+          & > div.buttons_container {
+            gap: calc(var(--base-gap) * 2);
+            // justify-content: space-between;
+            
+            &  button {
+              padding: 1em 1.2em;
+
+              &  img {
+                width: 20px;
+              }
+            }
+          } 
+        }
+      }
+
+      & div.download_image_container {
+        display: none;
       }
     }
   }
